@@ -1,7 +1,6 @@
 services:
   hack-dev-ubuntu:
-    #image: justdanz/hack-dev-ubuntu
-    build: .
+    image: justdanz/hack-dev-ubuntu
     volumes:
       - ./:/app
     ports:
