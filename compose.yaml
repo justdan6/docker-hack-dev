@@ -1,0 +1,8 @@
+services:
+  hack-dev-ubuntu:
+    image: justdanz/hack-dev-ubuntu
+    volumes:
+      - ./src:/src
+    ports:
+      - "8080:8080"
+    command: hhvm -m server -p 8080
