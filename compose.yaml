@@ -1,6 +1,6 @@
 services:
   hack-dev-ubuntu:
-    image: justdanz/hack-dev-ubuntu
+    image: justdanz/hack-dev-ubuntu # justdanz/hack-dev-debian
     volumes:
       - ./:/app
     ports:
