@@ -1,7 +1,9 @@
 # What is this?
 A docker environment for [Hack](https://hacklang.org/).
 
-I created this as an easy way to use Hack on my M1 Macbook Pro.
+I created this as an easy way to use Hack on my M1 Macbook Pro following https://docs.hhvm.com/hack/getting-started/starting-a-real-project .
+
+The Dockerfile is located at https://github.com/justdan6/docker-hack-dev-ubuntu
 
 # How to use
 ```

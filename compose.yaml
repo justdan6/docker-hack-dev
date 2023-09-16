@@ -1,8 +1,14 @@
 services:
   hack-dev-ubuntu:
-    image: justdanz/hack-dev-ubuntu
+    #image: justdanz/hack-dev-ubuntu
+    build: .
     volumes:
-      - ./src:/src
+      - ./:/app
     ports:
       - "8080:8080"
-    command: hhvm -m server -p 8080
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        composer install
+        hhvm -m server -p 8080 -d hhvm.server.source_root=/app/src
