@@ -7,7 +7,7 @@ The Dockerfile is located at https://github.com/justdan6/docker-hack-dev-ubuntu
 
 # How to use
 ```
-git pull https://github.com/justdan6/docker-hack-dev.git
+git clone https://github.com/justdan6/docker-hack-dev.git
 
 cd docker-hack-dev
 
