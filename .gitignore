@@ -1,3 +1,4 @@
 vendor/
 www.pid
 Dockerfile
+.var/

@@ -1,7 +1,8 @@
 {
     "require": {
         "hhvm/hsl": "^4.108",
-        "hhvm/hhvm-autoload": "^3.3"
+        "hhvm/hhvm-autoload": "^3.3",
+        "facebook/hh-clilib": "^2.6"
     },
     "config": {
         "allow-plugins": {
