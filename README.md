@@ -5,6 +5,7 @@ A way to get [HHVM](https://hhvm.com/) working on arm64.
 This requires use of [Colima](https://github.com/abiosoft/colima) and an up to date version of [QEMU](https://www.qemu.org/) in order to work. Rosetta does not currently support [some x86_64 instruction](https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment) execution which HHVM uses.
 
 ```
+brew install docker
 brew install qemu
 brew install colima
 git clone https://github.com/justdan6/docker-hack-dev.git
