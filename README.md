@@ -43,15 +43,20 @@ default seccomp profile without changing container security settings.
 ## Start the environment
 
 Install Docker Engine/Desktop and Docker Compose v2 or newer. On x86-64 Linux
-or an Intel Mac, use your normal Docker context. On Apple Silicon, the image
-runs as `linux/amd64`; if Docker Desktop reports an illegal instruction or
-Rosetta error, use a full x86-64 QEMU VM with Colima:
+or an Intel Mac, use your normal Docker context. On Apple Silicon, use a full
+x86-64 QEMU VM with Colima. Setting `platform: linux/amd64` alone is not enough:
+the CLI tools can work under Docker Desktop's translation while the HTTP server
+still crashes. This build's full test suite, including HTTP, is verified on
+native x86-64 Linux in CI; the full Colima VM path has not been revalidated here.
 
 ```sh
 brew install docker docker-compose qemu colima
-# For an existing installation:
-# brew update && brew upgrade docker docker-compose qemu colima
+```
 
+For an existing Homebrew installation, first run
+`brew update && brew upgrade docker docker-compose qemu colima`, then start the VM:
+
+```sh
 colima start --profile hack-dev --vm-type qemu --arch x86_64 \
   --cpu 4 --cpu-type max --memory 16 --network-address
 docker context use colima-hack-dev
