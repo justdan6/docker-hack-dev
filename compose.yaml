@@ -1,13 +1,21 @@
 services:
   hack-dev-ubuntu:
-    image: justdanz/hack-dev-ubuntu # justdanz/hack-dev-debian
+    image: justdanz/hack-dev-ubuntu:latest
+    platform: linux/amd64
+    build:
+      context: .
+      args:
+        HACK_UID: ${HACK_UID:-1000}
+    pull_policy: build
+    init: true
+    working_dir: /app
     volumes:
       - ./:/app
     ports:
-      - "8080:8080"
-    command: 
-      - /bin/sh
-      - -c
-      - |
-        composer install
-        hhvm -m server -p 8080 -d hhvm.server.source_root=/app/src
+      - "127.0.0.1:${PORT:-8080}:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:8080/hello.hack"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 120s

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3093c04695f0ed348d24df77fb93405",
+    "content-hash": "e8b9b5705ec7de45c42c9b74273cedc2",
     "packages": [
         {
             "name": "facebook/hh-clilib",
@@ -46,7 +46,9 @@
                 "issues": "https://github.com/hhvm/hh-clilib/issues",
                 "source": "https://github.com/hhvm/hh-clilib/tree/v2.6.0"
             },
-            "time": "2020-12-14T21:29:15+00:00"
+            "abandoned": true,
+            "time": "2020-12-14T21:29:15+00:00",
+            "published-time": "2020-12-14T21:30:04+00:00"
         },
         {
             "name": "hhvm/hhvm-autoload",
@@ -83,8 +85,8 @@
                     "Facebook\\AutoloadMap\\ComposerPlugin"
                 ],
                 "branch-alias": {
-                    "dev-master": "3.x-dev",
                     "dev-main": "3.x-dev",
+                    "dev-master": "3.x-dev",
                     "dev-CI_current_pull_request": "3.x-dev"
                 }
             },
@@ -102,7 +104,8 @@
                 "source": "https://github.com/hhvm/hhvm-autoload/tree/v3.3.2"
             },
             "abandoned": true,
-            "time": "2022-05-30T18:49:17+00:00"
+            "time": "2022-05-30T18:49:17+00:00",
+            "published-time": "2022-05-30T19:31:40+00:00"
         },
         {
             "name": "hhvm/hsl",
@@ -143,7 +146,8 @@
                 "issues": "https://github.com/hhvm/hsl/issues",
                 "source": "https://github.com/hhvm/hsl/tree/v4.108.1"
             },
-            "time": "2021-05-04T14:32:06+00:00"
+            "time": "2021-05-04T14:32:06+00:00",
+            "published-time": "2021-05-04T14:33:58+00:00"
         },
         {
             "name": "hhvm/hsl-experimental",
@@ -187,7 +191,8 @@
                 "source": "https://github.com/hhvm/hsl-experimental/tree/v4.108.0"
             },
             "abandoned": true,
-            "time": "2021-05-04T18:41:22+00:00"
+            "time": "2021-05-04T18:41:22+00:00",
+            "published-time": "2021-05-04T18:42:19+00:00"
         },
         {
             "name": "hhvm/type-assert",
@@ -233,7 +238,8 @@
                 "source": "https://github.com/hhvm/type-assert/tree/v4.2.2"
             },
             "abandoned": true,
-            "time": "2021-09-13T15:44:05+00:00"
+            "time": "2021-09-13T15:44:05+00:00",
+            "published-time": "2021-09-13T15:50:05+00:00"
         }
     ],
     "packages-dev": [
@@ -277,7 +283,8 @@
                 "source": "https://github.com/hhvm/difflib/tree/v1.3.0"
             },
             "abandoned": true,
-            "time": "2021-09-27T22:08:35+00:00"
+            "time": "2021-09-27T22:08:35+00:00",
+            "published-time": "2021-11-17T21:42:00+00:00"
         },
         {
             "name": "facebook/fbexpect",
@@ -313,7 +320,8 @@
                 "source": "https://github.com/hhvm/fbexpect/tree/v2.9.1"
             },
             "abandoned": true,
-            "time": "2022-06-06T19:39:09+00:00"
+            "time": "2022-06-06T19:39:09+00:00",
+            "published-time": "2022-06-06T19:41:18+00:00"
         },
         {
             "name": "hhvm/hacktest",
@@ -346,8 +354,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev",
                     "dev-main": "2.x-dev",
+                    "dev-master": "2.x-dev",
                     "dev-CI_current_pull_request": "2.x-dev"
                 }
             },
@@ -360,65 +368,19 @@
                 "issues": "https://github.com/hhvm/hacktest/issues",
                 "source": "https://github.com/hhvm/hacktest/tree/v2.4.0"
             },
-            "time": "2022-06-06T18:42:25+00:00"
-        },
-        {
-            "name": "hhvm/hhast",
-            "version": "v4.168.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hhvm/hhast.git",
-                "reference": "01f7fed70d675643b200e8661e07eaed781592af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hhvm/hhast/zipball/01f7fed70d675643b200e8661e07eaed781592af",
-                "reference": "01f7fed70d675643b200e8661e07eaed781592af",
-                "shasum": ""
-            },
-            "require": {
-                "facebook/difflib": "^1.0.0",
-                "facebook/hh-clilib": "^2.5.0rc1",
-                "hhvm": "^4.168.2",
-                "hhvm/type-assert": "^4.2.2"
-            },
-            "require-dev": {
-                "facebook/fbexpect": "^2.8.1",
-                "facebook/hack-codegen": "^4.0",
-                "hhvm/hacktest": "^2.3.0",
-                "hhvm/hhvm-autoload": "^2.0.4|^3.0"
-            },
-            "bin": [
-                "bin/hhast-lint",
-                "bin/hhast-lint.hack",
-                "bin/hhast-migrate",
-                "bin/hhast-migrate.hack"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.x-dev",
-                    "dev-main": "4.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A mutable AST library for Hack with linting and code migrations",
-            "support": {
-                "issues": "https://github.com/hhvm/hhast/issues",
-                "source": "https://github.com/hhvm/hhast/tree/v4.168.2"
-            },
-            "time": "2023-01-25T18:12:29+00:00"
+            "abandoned": true,
+            "time": "2022-06-06T18:42:25+00:00",
+            "published-time": "2022-06-06T18:43:04+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform": {
+        "hhvm": "~4.172.1"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.11.0"
 }
