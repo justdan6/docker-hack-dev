@@ -1,8 +1,9 @@
 {
     "require": {
-        "hhvm/hsl": "^4.108",
-        "hhvm/hhvm-autoload": "^3.3",
-        "facebook/hh-clilib": "^2.6"
+        "hhvm": "~4.172.1",
+        "hhvm/hsl": "^4.108.1",
+        "hhvm/hhvm-autoload": "^3.3.2",
+        "facebook/hh-clilib": "^2.6.0"
     },
     "config": {
         "allow-plugins": {
@@ -10,8 +11,12 @@
         }
     },
     "require-dev": {
-        "hhvm/hhast": "^4.168",
-        "hhvm/hacktest": "^2.4",
-        "facebook/fbexpect": "^2.9"
+        "hhvm/hacktest": "^2.4.0",
+        "facebook/fbexpect": "^2.9.1"
+    },
+    "scripts": {
+        "test": "vendor/bin/hacktest tests/",
+        "lint": "php scripts/lint.php",
+        "typecheck": "hh_client check"
     }
 }

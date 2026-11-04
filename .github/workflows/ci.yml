@@ -1,0 +1,44 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hack:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      COMPOSE_PROJECT_NAME: hack-dev-ci
+      PORT: 18080
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Match the workspace owner
+        run: echo "HACK_UID=$(id -u)" >> "$GITHUB_ENV"
+      - name: Validate Compose and build the image
+        run: |
+          docker compose config --quiet
+          docker compose build --pull
+      - name: Install dependencies and check Hack
+        run: |
+          docker compose run --rm --no-deps hack-dev-ubuntu sh -eu -c '
+            composer install --prefer-dist --no-progress
+            composer validate --no-check-publish
+            composer check-platform-reqs
+            composer test
+            composer lint
+            composer typecheck
+          '
+      - name: Check the HTTP endpoint
+        run: |
+          docker compose up -d --wait --wait-timeout 240
+          test "$(curl --fail --silent http://127.0.0.1:18080/hello.hack)" = 'Hello World!'
+      - name: Show logs and clean up
+        if: always()
+        run: |
+          docker compose logs --no-color
+          docker compose down

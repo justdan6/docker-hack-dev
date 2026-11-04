@@ -1,4 +1,4 @@
 vendor/
 www.pid
-Dockerfile
 .var/
+.cache/
